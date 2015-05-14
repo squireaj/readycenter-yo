@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+ <!--    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+<!--     <link rel="stylesheet" href="styles/main.css">
+ -->    <link rel="stylesheet" href="styles/materialize.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="readyCenter" ng-controller="MainCtrl">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+  
+<!-- Modal Start -->
+  <div id="modal1" class="modal">
+    <div class="align center modal-content">
+    <div class="row">
+      <form class="col s12">
+        <div ng-show="!newReg" class="row">
+          <h3>Login</h3>
+            <div class="input-field col s12" style="padding: 0;">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12" style="padding: 0;">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+
+        </div>
+        <!-- Registration Form -->
+        <div ng-show="newReg" class="row">
+      <h3>Register</h3>
+            <div class="input-field col s12" style="padding: 0;">
+              <i class="mdi-action-account-circle prefix"></i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s12" style="padding: 0;">
+              <i class="mdi-action-account-box prefix"></i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Last Name</label>
+            </div>
+            <div class="input-field col s12" style="padding: 0;">
+              <i class="mdi-communication-email prefix"></i>
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12" style="padding: 0;">
+              <i class="mdi-action-lock prefix"></i>
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+        </div>
+    </form>
+  </div>
+    </div>
+    <div class="modal-footer">
+      <a ng-click="showReg()" class="left modal-action waves-effect waves-orange btn-flat ">Register</a>
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat ">Sign In</a>
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat ">Forget your password?</a>
+    </div>
+  </div>
+    <!-- EndModal -->
+
+    <!--   Nav -->  
+  <nav>
+    <div class="nav-wrapper">
+      <a ui-sref="home" class="left hide-on-sm-and-down"><img src="images/logo.png" height="58px" style="padding-top: 4px; padding-left: 22px; position: absolute;"></a>
+      <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a ui-sref="dashboard">Dashboard</a></li>
+        <li><a ui-sref="Inventory">Inventory</a></li>
+        <li><a class="modal-trigger" href="#modal1">Login/Register</a></li>
+        <li><a href="/">Logout</a></li>
+      </ul>
+      <ul id="dropdown1" class="dropdown-content">
+    <li><a href="/">Gear</a></li>
+    <li class="divider"></li>
+      <li><a href="/">Tub B1</a></li>
+      <li><a href="/">Tub B2</a></li>
+      <li><a href="/">Tub B3</a></li>
+      <li class="divider"></li>
+    <li><a href="/">Food</a></li>
+    <li class="divider"></li>
+    <li><a href="/">Garage</a></li>
+    <li><a href="/">Tub A1</a></li>
+    <li><a href="/">Tub A2</a></li>
+    </ul>
+       <ul class="side-nav" id="mobile-demo">
+        <li><a ui-sref="dashboard">Dashboard</a></li>
+        <li><a class="dropdown-button" data-activates="dropdown1">Inventory<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+        <li><a class="modal-trigger" href="#modal1">Login/Register</a></li>
+        <li><a href="/">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+    <!-- EndNav -->
+
+
+    <!--    views -->
+
+  <div ui-view></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- jQuery -->
+    <script src="scripts/jquery.js"></script>
+    <!-- ui-bootstrap -->
+      <script src="scripts/ui-bootstrap-tpls.js"></script>
+    <!--   ui-router -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
+        
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/init.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/app.config.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

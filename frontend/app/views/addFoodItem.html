@@ -1,0 +1,78 @@
+<div class="seven">
+  <div class="section"></div>
+<h3 style="font-weight: 100;">Add Food Item</h3>
+  <div class="section"></div>
+    <div class="row">
+       <form class="col s6 offset-s3 card-panel white z-depth-2" ng-submit="search(searchInput)">
+       <div class="row">
+          <label><h5 style="margin-bottom: 0; padding-top: 6px; padding-left: 13px; text-decoration: underline;">New Item Search</h5></label>
+            <div class="input-field col s12" style="padding-right: 10%; padding-bottom: 15px;">
+            <i class="mdi-action-search prefix"></i>
+            <input placeholder="Search" id="icon_prefix" type="text" class="validate" ng-model="searchInput">
+            </div>
+<!--           <div class="col s1">
+            <button class="btn waves-effect waves-light" style="max-height: 40px; margin-top: 20px; margin-left: 2em;">Find</button>
+          </div> -->
+          </div>
+        </form>
+        <form class="col s6 offset-s3 card-panel white z-depth-2">
+          <ul class="collapsible" data-collapsible="accordion" ng-repeat="item in itemResults" style="border: 0; margin: 0;">
+          <li>
+            <div class="collapsible-header"><i style="font-size: 10px" class="mdi-toggle-radio-button-off"></i>{{item.name}}</div>
+          </li>
+          <li>
+            <div class="collapsible"><i style="font-size: 10px;" class="mdi-action-trending-neutral"></i><p>{{item.desc}}</p></div>
+          </li>
+          </ul>
+
+      <form ng-show="true" class="col s6 offset-s3 card-panel white z-depth-3">
+          <label><h5 style="margin-bottom: 0; margin-top: 6px; margin-left: 13px; text-decoration: underline;">New Item</h5></label>
+          <div class="input-field col s12" style="padding-right: 10%;">
+          <i class="mdi-maps-local-restaurant prefix"></i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Item Name</label>
+        </div>
+          <div class="input-field col s12" style="margin-bottom: 25; padding-right: 10%;">
+          <i class="mdi-navigation-apps prefix"></i>
+          <input id="icon_prefix" type="number" class="validate">
+          <label for="icon_prefix">Count</label>
+        </div>
+            <div ng-show="isResult" class="input-field col s12" style="padding-right: 10%;">
+            <i class="mdi-editor-format-clear prefix"></i>
+            <select styles="margin-top: 15px;" class="browser-default">
+              <option value="" disabled selected>Unit Type</option>
+              <option value="1">lb</option>
+              <option value="2">kg</option>
+              <option value="3">l</option>
+              <option value="4">qt</option>
+              <option value="5">pt</option>
+              <option value="6">oz</option>
+              <option value="7">gal</option>
+              <option value="8">units</option>
+            </select>
+          </div>
+          <div class="input-field col s12" style="padding-right: 10%;">
+          <i class="mdi-file-cloud prefix"></i>
+          <input id="icon_prefix" type="number" class="validate">
+          <label for="icon_prefix">Carbohydrates</label>
+        </div>
+          <div class="input-field col s12" style="padding-right: 10%;">
+          <i class="mdi-image-grain prefix"></i>
+          <input id="icon_prefix" type="number" class="validate">
+          <label for="icon_prefix">Protien</label>
+        </div>
+          <div class="input-field col s12" style="padding-right: 10%;">
+          <i class="mdi-maps-local-pizza prefix"></i>
+          <input id="icon_prefix" type="number" class="validate">
+          <label for="icon_prefix">Fat</label>
+        </div>
+          <div class="input-field col s12" style="padding-right: 10%;">
+          <i class="mdi-image-flash-on prefix"></i>
+          <input id="icon_prefix" type="number" class="validate">
+          <label for="icon_prefix">Total Calories</label>
+        </div>
+
+          <button ui-sref="dashboard" ng-click="" class="right btn waves-effect waves-light" style="margin-right: 4%; margin-top: 4%; margin-bottom: 9%">Save</button>
+        </form>
+    </div>
+</div>

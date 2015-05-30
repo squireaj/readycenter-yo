@@ -16,6 +16,21 @@ angular.module('readyCenter').config(function($urlRouterProvider, $stateProvider
 		url:'/addFoodItem',
 		templateUrl: '/views/addFoodItem.html',
 		controller: 'AddFoodItemCtrl'
+	})
+	.state('addgearitem',{
+		url:'/addGearItem',
+		templateUrl: '/views/addGearItem.html',
+		controller: 'AddGearItemCtrl'
+	})
+	.state('whattostore',{
+		url:'/whatToStore',
+		templateUrl: '/views/whatToStore.html',
+		controller: 'WhatToStoreCtrl'
+	})
+	.state('addNewLocation',{
+		url:'/addNewLocation',
+		templateUrl: '/views/newLocation.html',
+		controller: 'NewLocationCtrl'
 	});
 
 	$httpProvider.interceptors.push('authInterceptor')

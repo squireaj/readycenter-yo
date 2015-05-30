@@ -10,4 +10,6 @@ var locationSchema = new mongoose.Schema({
 	// "subLocations": [newLocation] 
 });
 
-module.exports = mongoose.model('newLocation', locationSchema);
+module.exports = mongoose.model('newLocation', locationSchema);propTypes: {
+        title: React.PropTypes.number.isRequired
+      },

@@ -2,7 +2,8 @@
 
 angular.module('readyCenter').factory('authToken', function($window) {
 	var storage = $window.localStorage;
-  	var cashedToken;
+  var authToken = 'nothing';
+  var cashedToken = 'nothing';
   	var userToken = 'userToken';
     return {
       	setToken: function(token)  {

@@ -89,11 +89,21 @@ function createSendToken(user, res) {
 // 	res.json(locations);
 // })
 
+//Location endpoints
+
 app.post('/api/location', locationController.create);
+app.post('/api/location', locationController.);
 
-// app.post('/api/location/foodItem', function(req, res){
+//Gear endpoints
 
-// })
+app.post('/api/location', gearController.create);
+app.post('/api/location', gearController.);
+
+
+//Food endpoints
+
+app.post('/api/location', foodController.create);
+app.post('/api/location', foodController.);
 
 
 mongoose.connect('mongodb://localhost/readyCenter');

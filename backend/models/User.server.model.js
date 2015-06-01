@@ -12,7 +12,6 @@ var userSchema = new Schema({
 		tokenSecret: String
 	},
 	password: String,
-	locations: [{type: Schema.Types.ObjectId, ref: 'Place'}]//referenced model
 });
 
 //pre('save') is mongoose middleware that runs before every user is created

@@ -6,10 +6,11 @@ var locationSchema = new mongoose.Schema({
 	"owner": String,
 	"locationTitle": String,
 	"foodItems": [{type: mongoose.Schema.Types.ObjectId, ref: 'foodItem'}],
-	"gearItems": [{type: mongoose.Schema.Types.ObjectId, ref: 'gearItem'}]
+	"gearItems": [{type: mongoose.Schema.Types.ObjectId, ref: 'gearItem'}],
+	"userId" : {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 	// "subLocations": [newLocation] 
 });
 
 module.exports = mongoose.model('newLocation', locationSchema);propTypes: {
         title: React.PropTypes.number.isRequired
-      },
+      },	

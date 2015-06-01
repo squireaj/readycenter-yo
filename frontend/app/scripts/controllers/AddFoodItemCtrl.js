@@ -32,7 +32,9 @@ angular.module('readyCenter')
     	});
   	};
   	
-
+    $scope.create = function() {
+      Materialize.toast("Item Created!", 2500, 'toast-success');
+    }
 
 	// $scope.isResult();
   });

@@ -4,7 +4,7 @@ angular.module('readyCenter')
   .controller('AddGearItemCtrl', function ($scope, $http, API_URL, alert ) {
 
     $scope.create = function() {
-      Materialize.toast("Location Created!", 2500, 'toast-success');
+      Materialize.toast("Item Created!", 2500, 'toast-success');
     }
 
   });

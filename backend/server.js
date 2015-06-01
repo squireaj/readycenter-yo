@@ -96,7 +96,7 @@ app.use(function(req, res, next){
 
 	next();
 })
-
+//****Register*****************************************************
 app.post('/api/users', function(req, res) {
 	console.log(req.body);
 	User.findOne({ email: req.body.email }).exec().then(function(user) {
@@ -119,22 +119,22 @@ app.post('/api/users', function(req, res) {
 		});
 	})
 });
-
+//****Login********************************************************
 app.post('/api/users/auth', passport.authenticate('local', { failureRedirect: '/login' }), function(req, res) {
 	return res.json({message: "you logged in"});
 });
-
+//****Twitter Auth*************************************************
 app.get('/api/auth/twitter', passport.authenticate('twitter'));
 app.get('/api/auth/twitter/callback', passport.authenticate('twitter', { 
 	failureRedirect: '/#login', 
 	successRedirect: '/#locations' 
 }));
-
+//****Logout********************************************************
 app.get('/api/auth/logout', function(req, res) {
 	req.logout();
 	return res.redirect('/#login');
 });
-
+//****Post Location***********************************
 app.post('/api/users/me/favorite_locations', requireAuth, function(req, res) {
 	//grab the location
 	Location.findOne({ _id: req.body._id }).exec().then(function(location) {
@@ -153,7 +153,7 @@ app.post('/api/users/me/favorite_locations', requireAuth, function(req, res) {
 		});
 	});
 });
-
+//****Get Users locations******************************
 app.get('/api/users/me', requireAuth, function(req, res) {
 	User
 	.findOne({_id: req.user.id})
@@ -162,7 +162,7 @@ app.get('/api/users/me', requireAuth, function(req, res) {
 		return res.json(user);
 	});
 });
-
+//****Get Users Items***********************************
 app.get('/api/users', requireAuth, function(req, res) {
 	User
 	.find()
@@ -171,7 +171,7 @@ app.get('/api/users', requireAuth, function(req, res) {
 		return res.json(users);
 	});
 });
-
+//****Delete User****************************************
 app.delete('/api/users/:userId', requireAuth, function(req, res) {
 	User.remove({ _id: req.params.userId }, function(err) {
 		if (err) {
@@ -180,7 +180,7 @@ app.delete('/api/users/:userId', requireAuth, function(req, res) {
 		res.status(200).end();
 	});
 });
-
+//****Post New Location**********************************
 app.post('/api/locations', requireAuth, function(req, res) {
 	var location = new location(req.body);
 	location.save(function(err, new_location) {

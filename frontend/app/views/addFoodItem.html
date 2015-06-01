@@ -1,19 +1,24 @@
 <div class="seven">
   <div class="section"></div>
 <h3 style="font-weight: 100;">Add Food Item</h3>
-  <div class="section"></div>
-    <div class="row">
+        <form class="col s6" style="margin-bottom: 3%;">
+           <h5 style="font-weight: 100; margin-left: 5%;">Search for your item</h5>
+        </form>
        <form class="col s6 offset-s3 card-panel white z-depth-2" ng-submit="search(searchInput)">
        <div class="row">
           <label><h5 style="margin-bottom: 0; padding-top: 6px; padding-left: 13px; text-decoration: underline;">New Item Search</h5></label>
-            <div class="input-field col s12" style="padding-right: 10%; padding-bottom: 15px;">
+            <div class="input-field col s12" style="padding-right: 10%; padding-bottom: 3px;">
             <i class="mdi-action-search prefix"></i>
             <input placeholder="Search" id="icon_prefix" type="text" class="validate" ng-model="searchInput">
             </div>
+            <div class="left" style="margin-left: 13%;"><img class="z-depth-0" style="" src="images/poweredBy.png" style=""></div>
 <!--           <div class="col s1">
             <button class="btn waves-effect waves-light" style="max-height: 40px; margin-top: 20px; margin-left: 2em;">Find</button>
           </div> -->
           </div>
+        </form>
+        <form class="col s6">
+           <h5 style="font-weight: 100; margin-left: 5%;">Imput it manually</h5>
         </form>
         <form class="col s6 offset-s3 card-panel white z-depth-2">
           <ul class="collapsible" data-collapsible="accordion" ng-repeat="item in itemResults" style="border: 0; margin: 0;">
@@ -24,6 +29,7 @@
             <div class="collapsible"><i style="font-size: 10px;" class="mdi-action-trending-neutral"></i><p>{{item.desc}}</p></div>
           </li>
           </ul>
+          </form>
 
       <form ng-show="true" class="col s6 offset-s3 card-panel white z-depth-3">
           <label><h5 style="margin-bottom: 0; margin-top: 6px; margin-left: 13px; text-decoration: underline;">New Item</h5></label>
@@ -72,7 +78,7 @@
           <label for="icon_prefix">Total Calories</label>
         </div>
 
-          <button ui-sref="dashboard" ng-click="" class="right btn waves-effect waves-light" style="margin-right: 10%; margin-top: 4%; margin-bottom: 9%">Save</button>
+          <button ui-sref="dashboard" ng-click="create()" class="right btn waves-effect waves-light" style="margin-right: 10%; margin-top: 4%; margin-bottom: 9%">Save</button>
         </form>
-    </div>
 </div>
+

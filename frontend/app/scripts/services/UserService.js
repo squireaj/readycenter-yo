@@ -26,6 +26,8 @@ angular.module('readyCenter').service('UsersService', function($http, $q, API_UR
 				password: password
 			}
 		}).then(function(res) {
+			this.userId = res.data._id;
+			
 			deferred.resolve(res.data);
 		}).catch(function(res) {
 			deferred.reject(res.data);
